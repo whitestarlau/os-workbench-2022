@@ -17,7 +17,7 @@ void print_key()
   }
 }
 
-int wait_exit()
+dir_t wait_exit()
 {
   AM_INPUT_KEYBRD_T event = {.keycode = AM_KEY_NONE};
   ioe_read(AM_INPUT_KEYBRD, &event);
@@ -28,17 +28,35 @@ int wait_exit()
     puts("Key pressed: ");
     puts(key_names[event.keycode]);
     puts("\n");
+
     if (event.keycode == AM_KEY_ESCAPE)
     {
-      return 0;
+      return ESC;
     }
+    else if (event.keycode == AM_KEY_W)
+    {
+      return UP;
+    }
+    else if (event.keycode == AM_KEY_A)
+    {
+      return LEFT;
+    }
+    else if (event.keycode == AM_KEY_S)
+    {
+      return DOWN;
+    }
+    else if (event.keycode == AM_KEY_D)
+    {
+      return RIGHT;
+    }
+
     else
     {
-      return 1;
+      return NONE;
     }
   }
   else
   {
-    return 1;
+    return NONE;
   }
 }

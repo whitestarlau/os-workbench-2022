@@ -8,12 +8,17 @@ int main(const char *args) {
   puts(args); // make run mainargs=xxx
   puts("\"\n");
 
-  splash();
+  init_point();
 
   puts("Press any key to see its key code...\n");
-  int is_esc = 1;
-  while (is_esc) {
-    is_esc = wait_exit();
+  dir_t dir = NONE;
+  while (dir != ESC) {
+    dir = wait_exit();
+    if (dir != ESC && dir != NONE)
+    {
+      update_point(dir);
+    }
+    
   }
   return 0;
 }
