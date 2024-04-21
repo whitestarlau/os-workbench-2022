@@ -77,5 +77,6 @@ void update_point(dir_t dir)
   default:
     break;
   }
+  draw_tile(w, h, w, h, 0x000000); // black
   draw_tile(point.x, point.y, SIDE, SIDE, 0xffffff); // white
 }
