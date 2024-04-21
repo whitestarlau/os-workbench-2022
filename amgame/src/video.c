@@ -24,11 +24,16 @@ static void draw_tile(int x, int y, int w, int h, uint32_t color) {
 
 void splash() {
   init();
-  for (int x = 0; x * SIDE <= w; x ++) {
-    for (int y = 0; y * SIDE <= h; y++) {
-      if ((x & 1) ^ (y & 1)) {
-        draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
-      }
-    }
-  }
+
+  int wf = w/2;
+  int hf = h/2;
+  draw_tile(wf, hf, SIDE, SIDE, 0xffffff); // white
+
+  // for (int x = 0; x * SIDE <= w; x ++) {
+  //   for (int y = 0; y * SIDE <= h; y++) {
+  //     if ((x & 1) ^ (y & 1)) {
+  //       draw_tile(x * SIDE, y * SIDE, SIDE, SIDE, 0xffffff); // white
+  //     }
+  //   }
+  // }
 }
