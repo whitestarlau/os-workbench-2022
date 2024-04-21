@@ -60,6 +60,8 @@ void init_point()
 
 void update_point(dir_t dir)
 {
+  draw_tile(point.x, point.y, SIDE, SIDE, 0x000000); // white
+
   switch (dir)
   {
   case LEFT:
@@ -77,8 +79,6 @@ void update_point(dir_t dir)
   default:
     break;
   }
-  // draw_tile(w, h, w, h, 0x000000); // black
-  io_write(AM_GPU_FBDRAW, 0, 0, NULL, 0, 0, true);
 
   draw_tile(point.x, point.y, SIDE, SIDE, 0xffffff); // white
 }
