@@ -21,7 +21,7 @@ int wait_exit()
 {
   AM_INPUT_KEYBRD_T event = {.keycode = AM_KEY_NONE};
   ioe_read(AM_INPUT_KEYBRD, &event);
-  puts("wait_exit ");
+  // puts("wait_exit ");
 
   if (event.keycode != AM_KEY_NONE && event.keydown)
   {
