@@ -3,7 +3,6 @@
 #define SIDE 16
 static int w, h;
 
-
 static point_t point;
 
 static void init()
@@ -64,16 +63,16 @@ void update_point(dir_t dir)
   switch (dir)
   {
   case LEFT:
-    point.x--;
+    point.x -= SIDE;
     break;
   case DOWN:
-    point.y++;
+    point.y += SIDE;
     break;
   case RIGHT:
-    point.x++;
+    point.x += SIDE;
     break;
   case UP:
-    point.y--;
+    point.y -= SIDE;
     break;
   default:
     break;
