@@ -11,9 +11,8 @@ int main(const char *args) {
   splash();
 
   puts("Press any key to see its key code...\n");
-  int is_esc = 0;
+  int is_esc = 1;
   while (is_esc) {
-    // print_key();
     is_esc = wait_exit();
   }
   return 0;
